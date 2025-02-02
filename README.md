@@ -1,8 +1,31 @@
-# React + Vite
+# Weather App
+A simple weather app built with React that gets the user's current location and fetches weather data from the OpenWeatherMap API.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Installation
+```bash
+git clone https://github.com/amirify/weather-app.git
+cd weather-app
+npm install
+npm run dev
+```
 
-Currently, two official plugins are available:
+## Environment Variables
+Create a .env file in the project root based on .env.example.
+This file stores sensitive configuration like API keys.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Instructions:
+1. Copy .env.example to .env
+2. Replace your_api_key_here with your actual API key.
+3. Save the file and restart the dev server if running
+```bash
+npm run dev
+```
+
+## Scripts
+```bash
+npm run dev
+npm run build
+npm run lint
+npm run preview
+npm run test
+```

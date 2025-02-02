@@ -2,17 +2,16 @@
   padding: 2rem;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.weather-overview {
+  display: flex;
+  align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.weather-overview > img {
+  margin-right: 0.5rem;
+}
+
+.weather-overview span {
+  text-transform: capitalize;
+  color: cyan;
 }

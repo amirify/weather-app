@@ -3,9 +3,26 @@ import globals from 'globals'
 import react from 'eslint-plugin-react'
 import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
+import jest from 'eslint-plugin-jest'
 
 export default [
   { ignores: ['dist'] },
+  {
+    files: ['**/*.test.js', '**/*.spec.js'],
+    plugins: {
+      jest,
+    },
+    languageOptions: {
+      globals: {
+        ...jest.environments.globals, // Enable Jest globals like "describe", "test", "jest"
+      },
+    },
+    rules: {
+      'jest/no-disabled-tests': 'warn',
+      'jest/no-focused-tests': 'error',
+      'jest/no-identical-title': 'error',
+    },
+  },
   {
     files: ['**/*.{js,jsx}'],
     languageOptions: {

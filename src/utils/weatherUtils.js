@@ -23,7 +23,6 @@ export const fetchWeatherData = async (
     setWeather(data);
   } catch (err) {
     setError("Error fetching weather data");
-    console.error(err);
   }
 };
 
@@ -52,6 +51,5 @@ export const fetchForecastData = async (
     setForecastData(data);
   } catch (err) {
     setError("Error fetching weather data");
-    console.error(err);
   }
 };
