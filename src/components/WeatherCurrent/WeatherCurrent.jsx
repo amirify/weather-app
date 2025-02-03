@@ -28,6 +28,25 @@ export const WeatherCurrent = ({ location, apiKey }) => {
     }
   }, [location, apiKey]);
 
+  // Save data required for external use to localStorage whenever weather data updates
+  useEffect(() => {
+    if (weather) {
+      const {
+        name,
+        dt,
+        main,
+        weather: [{ description } = {}],
+      } = weather;
+
+      const weatherSummary = { name, date: formatDate(dt), main, description };
+      try {
+        localStorage.setItem("weatherSummary", JSON.stringify(weatherSummary));
+      } catch (error) {
+        console.error("Failed to save weather data:", error);
+      }
+    }
+  }, [weather]);
+
   // Display an error message with a retry button if fetching weather data fails
   if (error) {
     return (
@@ -50,13 +69,19 @@ export const WeatherCurrent = ({ location, apiKey }) => {
   }
 
   // Destructure weather data for improved readability and easier access
-  const { name, main, wind, visibility, weather: weatherDetails } = weather;
-  const { description, icon } = weatherDetails[0];
+  const {
+    name,
+    dt,
+    main,
+    wind,
+    visibility,
+    weather: [{ description, icon } = {}],
+  } = weather;
 
   return (
     <div>
       <h1>Weather in {name}</h1>
-      <p>{formatDate(weather.dt)}</p>
+      <p>{formatDate(dt)}</p>
       <div className="weather-overview">
         <img
           src={`https://openweathermap.org/img/wn/${icon}@2x.png`}
