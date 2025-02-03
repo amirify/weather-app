@@ -1,20 +1,23 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-import "./index.css";
-import App from "./App.jsx";
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import './index.css'
+import App from './App.jsx'
 
-// Create a root element for rendering the app
-const rootElement = document.getElementById("root");
+// Create the root for the weather app
+const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);
 
-// Render the app initially
+// Function to unmount the app
+function unmountWeatherApp() {
+  root.unmount();
+}
+
+// Attach the unmount function to the window object
+window.unmountWeatherApp = unmountWeatherApp;
+
+// Render the app
 root.render(
   <StrictMode>
     <App />
-  </StrictMode>
-);
-
-// Call this function to unmount the app
-window.unmountWeatherApp = () => {
-  root.unmount();
-};
+  </StrictMode>,
+)
