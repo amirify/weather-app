@@ -46,7 +46,7 @@ export const WeatherForecast = ({ location, apiKey }) => {
 
   // Display a loading indicator while detecting location and fetching weather data
   if (!forecastData && !error) {
-    return <LoadingIndicator message="Detecting your location..." />;
+    return <LoadingIndicator message="Fetching forecast data..." />;
   }
 
   // Destructure weather data for improved readability and easier access
