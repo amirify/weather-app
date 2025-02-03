@@ -32,6 +32,6 @@ npm run deploy
 ```
 
 ## Links
-[Weather App Firebase Link](https://weather-app-d2a9a.web.app/)
-[Landing Page Firebase Link](https://landing-page-52ab6.web.app/)
-[Landing Page Github Link](https://github.com/amirify/landing-page)
+[Weather App Firebase Link](https://weather-app-d2a9a.web.app/)  
+[Landing Page Firebase Link](https://landing-page-52ab6.web.app/)  
+[Landing Page Github Link](https://github.com/amirify/landing-page)  
