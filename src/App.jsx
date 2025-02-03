@@ -15,7 +15,7 @@ function App() {
 
   // Import the OpenWeatherMap API key from environment variables
   // and pass it to Weather components for API authentication
-  const API_KEY = import.meta.env.VITE_OPENWEATHER_API_KEY;
+  const API_KEY = import.meta.env.VITE_OPENWEATHER_API_KEY || process.env.OPENWEATHER_API_KEY;
 
   useEffect(() => {
     // Get the user's current location
