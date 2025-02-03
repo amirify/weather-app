@@ -28,4 +28,5 @@ npm run build
 npm run lint
 npm run preview
 npm run test
+npm run deploy
 ```
