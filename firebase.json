@@ -14,6 +14,19 @@
             "value": "GET"
           }
         ]
+      },
+      {
+        "source": "/.vite/**",
+        "headers": [
+          {
+            "key": "Access-Control-Allow-Origin",
+            "value": "*"
+          },
+          {
+            "key": "Access-Control-Allow-Methods",
+            "value": "GET"
+          }
+        ]
       }
     ],
     "ignore": [
