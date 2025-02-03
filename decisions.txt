@@ -1,0 +1,30 @@
+# Frontend Challenge - Decisions & Assumptions
+
+## Project Structure
+     Because we had two seperate projects, and we had to integrate one into another,
+     I decided to go with the micro-frontend approach for better modularity and scalability. 
+     so separated landing Page and weather app into independent repositories.
+     I initialized the weather app using vite, as it's a faster and more modern build tool for React.
+
+## API Key Management
+     Development: 
+       Used Vite environment variables (`VITE_OPENWEATHER_API_KEY`) to manage the API key securely.
+     Deployment: 
+       Integrated Firebase Hosting and GitHub Actions CI/CD to inject environment variables securely 
+       during the build process.
+
+## CI/CD Pipeline
+     As the project had to be hosted on firebase, I initialized firebase in both project,
+     and firebase initilized basic github actions workflows. I modified firebase.json file
+     to solve CORS issue between micro-frontends.
+
+## Communication Between Micro-Frontends
+     Dynamically loaded the Weather App’s JavaScript and CSS into the Landing Page.
+     Because it maintains loose coupling between the two apps, allowing independent updates.
+     Also exposed two functions from weather app through the window object so the landing page can handle
+     mounting and unmounting of the app when user opens and closes the app.
+
+## State Management & Data Persistence
+     Used localStorage to persist weather data when the Weather App is closed. 
+     Because it's simple and effective for lightweight data with minimal overhead.
+
